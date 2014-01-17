@@ -1,0 +1,9 @@
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\Telecom2.dll
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\Telecom2.pdb
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\EntityFramework.dll
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\EntityFramework.xml
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\obj\Debug\Telecom2.dll
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\obj\Debug\Telecom2.pdb
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\PagedList.dll
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\bin\PagedList.xml
+E:\Projects\MyProjects\Sharp\Telecom2\Telecom2\obj\Debug\Telecom2.csprojResolveAssemblyReference.cache

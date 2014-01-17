@@ -1,0 +1,38 @@
+﻿@model Telecom2.Models.Engineer
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление записи</h2>
+
+<h3>Вы уверены, что хотите удалить запись?</h3>
+<fieldset>
+    <legend>Инженер</legend>
+
+    <div class="display-label">Фамилия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">Имя</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstMidName)
+    </div>
+
+    <div class="display-label">Отчество</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">Подразделение</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullRegion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Удалить" /> 
+    </p>
+    <p>  @Html.ActionLink("Назад", "Index") </p>
+    
+}

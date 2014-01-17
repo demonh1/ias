@@ -1,0 +1,49 @@
+﻿@model Telecom2.Models.Client
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление записи</h2>
+
+<h3>Вы уверены, что хотите удалить запись?</h3>
+<fieldset>
+    <legend>Клиент</legend>
+
+    <div class="display-label">Фамилия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">Имя</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstMidName)
+    </div>
+
+    <div class="display-label">Отчество</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">Телефон</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">Адрес</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">Район</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Region)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Удалить" />   
+    </p>
+    <p> @Html.ActionLink("Назад", "Index") </p>
+}

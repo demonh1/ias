@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Telecom2.Models.OpenCode>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            COpen
+        </th>
+        <th>
+            FCOpen
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.COpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FCOpen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OpenCodeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OpenCodeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OpenCodeID })
+        </td>
+    </tr>
+}
+
+</table>

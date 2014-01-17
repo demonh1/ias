@@ -1,0 +1,71 @@
+﻿@model Telecom2.Models.Request
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление записи</h2>
+
+<h3>Вы уверены, что хотите удалить запись?</h3>
+<fieldset>
+    <legend>Заявка</legend>
+
+    <div class="display-label">Оператор</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator.LastName)
+    </div>
+
+    <div class="display-label">Телефон</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.Phone)
+    </div>
+
+    <div class="display-label">Дата</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RDate)
+    </div>
+
+    <div class="display-label">Код открытия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OpenCode.OpenCodeID)
+    </div>
+
+    <div class="display-label">Код повреждения</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DamageCode.DamageCodeID)
+    </div>
+
+    <div class="display-label">Код закрытия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CloseCode.CloseCodeID)
+    </div>
+
+    <div class="display-label">Инженер</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Engineer.LastName)
+    </div>
+
+   
+    <div class="display-label">Дата выезда</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RunDay)
+    </div>
+
+   
+
+    <div class="display-label">Комментарий</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullComment)
+    </div>
+
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullCommentEngi)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Удалить" /> 
+    </p>
+    <p>  @Html.ActionLink("Назад", "Index") </p>
+    
+}

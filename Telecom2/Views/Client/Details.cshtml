@@ -1,0 +1,46 @@
+﻿@model Telecom2.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<fieldset>
+    <legend>Клиент</legend>
+
+    <div class="display-label">Фамилия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">Имя</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstMidName)
+    </div>
+
+    <div class="display-label">Отчество</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">Телефон</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">Адрес</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">Район</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Region)
+    </div>
+</fieldset>
+
+<p>
+    <!--@Html.ActionLink("Edit", "Edit", new { id=Model.ClientID }) | -->
+    @Html.ActionLink("Назад", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿@model Telecom2.Models.Request
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Добавить/редактировать</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Заявка</legend>
+
+        @Html.HiddenFor(model => model.RequestID)
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.OperatorID, "Оператор")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OperatorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.OperatorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientID, "Телефон")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ClientID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ClientID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RDate, "Дата")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.RDate)
+            @Html.ValidationMessageFor(model => model.RDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpenCodeID, "Код открытия")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OpenCodeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.OpenCodeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DamageCodeID, "Код повреждения")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DamageCodeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DamageCodeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CloseCodeID, "Код закрытия")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CloseCodeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CloseCodeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EngineerID, "Инженер")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EngineerID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EngineerID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RunTime, "Время выезда")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RunTime)
+            @Html.ValidationMessageFor(model => model.RunTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RunDate, "Дата выезда")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RunDate)
+            @Html.ValidationMessageFor(model => model.RunDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comment, "Комментарий оператора")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Comment)
+            @Html.ValidationMessageFor(model => model.Comment)
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.CommentEngi, "Комментарий инженера")
+        </div>
+
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CommentEngi)
+            @Html.ValidationMessageFor(model => model.CommentEngi)
+        </div>
+
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+

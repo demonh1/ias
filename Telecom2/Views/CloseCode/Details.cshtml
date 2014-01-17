@@ -1,0 +1,25 @@
+﻿@model Telecom2.Models.CloseCode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CloseCode</legend>
+
+    <div class="display-label">CClose</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CClose)
+    </div>
+
+    <div class="display-label">FCClose</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FCClose)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CloseCodeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

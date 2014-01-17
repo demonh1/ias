@@ -1,0 +1,131 @@
+﻿
+@model PagedList.IPagedList<Telecom2.Models.Request>
+           
+@{
+    ViewBag.Title = "Requests";
+}
+
+<h2>Заявки</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+
+@using (Html.BeginForm())
+{ 
+    <p>
+        Поиск @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Поиск" />
+    </p> 
+}
+
+<table>
+    <tr>
+        <th>
+            Оператор
+        </th>
+        <th>
+            Телефон
+        </th>
+        <th>
+            Дата
+        </th>
+        <th>
+            Код открытия
+        </th>
+        <th>
+            Код повреждения
+        </th>
+        <th>
+            Код закрытия
+        </th>
+        <th>
+            Инженер
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Operator.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenCode.FCOpen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DamageCode.FCDamage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CloseCode.FCClose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Engineer.LastName)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Добавить", "Edit", new { id = item.RequestID }) |
+            @Html.ActionLink("Детально", "Details", new { id = item.RequestID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.RequestID })
+            
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    Стр @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    из @Model.PageCount
+    @if (Model.HasPreviousPage)
+    {
+
+        @Html.ActionLink("<<", "Index", new
+   {
+       page = 1,
+       sortOrder = ViewBag.CurrentSort,
+       currentFilter = ViewBag.CurrentFilter
+   }) 
+        @Html.Raw(" "); 
+        @Html.ActionLink("< Пред ", "Index", new
+   {
+       page = Model.PageNumber - 1,
+       sortOrder = ViewBag.CurrentSort,
+       currentFilter = ViewBag.CurrentFilter
+   }) 
+    }
+    else
+    {
+        @:<< @Html.Raw(" ")
+        @:< Пред
+    }
+    @if (Model.HasNextPage)
+    { 
+        @Html.ActionLink("След >", "Index", new
+    {
+       page = Model.PageNumber + 1,
+       sortOrder = ViewBag.CurrentSort,
+       currentFilter = ViewBag.CurrentFilter
+   }) 
+        @Html.Raw(" ");
+        @Html.ActionLink(">>", "Index", new
+   {
+       page = Model.PageCount,
+       sortOrder = ViewBag.CurrentSort,
+       currentFilter = ViewBag.CurrentFilter
+   })
+    }
+    else
+    {
+        @:След >
+        @Html.Raw(" ")
+        @:>>
+        }
+</div>

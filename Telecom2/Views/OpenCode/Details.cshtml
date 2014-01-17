@@ -1,0 +1,25 @@
+﻿@model Telecom2.Models.OpenCode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OpenCode</legend>
+
+    <div class="display-label">COpen</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.COpen)
+    </div>
+
+    <div class="display-label">FCOpen</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FCOpen)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OpenCodeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

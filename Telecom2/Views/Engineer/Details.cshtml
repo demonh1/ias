@@ -1,0 +1,35 @@
+﻿@model Telecom2.Models.Engineer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<fieldset>
+    <legend>Инженер</legend>
+
+    <div class="display-label">Фамилия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+     <div class="display-label">Имя</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstMidName)
+    </div>
+
+    <div class="display-label">Отчество</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+
+    <div class="display-label">Подразделение-Район</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullRegion)
+    </div>
+</fieldset>
+<p>
+   <!-- @Html.ActionLink("Edit", "Edit", new { id=Model.EngineerID }) | -->
+    @Html.ActionLink("Назад", "Index")
+</p>

@@ -1,0 +1,63 @@
+﻿@model Telecom2.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<fieldset>
+    <legend>Заявка</legend>
+
+    <div class="display-label">Оператор</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Operator.LastName)
+    </div>
+
+
+    <div class="display-label">Телефон</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.Phone)
+    </div>
+     <div class="display-label">Адрес абонента</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.Address)
+    </div>
+     <div class="display-label">Дата регистрации</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RDate)
+    </div>
+
+    <div class="display-label">Код открытия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OpenCode.FCOpen)
+    </div>
+    <div class="display-label">Код повреждения</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DamageCode.FCDamage)
+    </div>
+     <div class="display-label">Дата выезда</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RunDay)
+    </div>
+    <div class="display-label">Код закрытия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CloseCode.FCClose)
+    </div>
+
+    <div class="display-label">Инженер</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Engineer.LastName)
+    </div>
+    <div class="display-label">Комментарий</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullComment)    
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullCommentEngi)    
+    </div>
+</fieldset>
+<p>
+   <!-- @Html.ActionLink("Edit", "Edit", new { id=Model.RequestID }) | -->
+    @Html.ActionLink("Назад", "Index")
+</p>

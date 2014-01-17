@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Telecom2.Models.DamageCode>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            CDamage
+        </th>
+        <th>
+            FCDamage
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CDamage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FCDamage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DamageCodeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DamageCodeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DamageCodeID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿@model Telecom2.Models.Operator
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детали</h2>
+
+<fieldset>
+    <legend>Оператор</legend>
+
+    <div class="display-label">Фамилия</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">Имя</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstMidName)
+    </div>
+
+    <div class="display-label">Отчество</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecondName)
+    </div>
+</fieldset>
+<p>
+   <!-- @Html.ActionLink("Edit", "Edit", new { id=Model.OperatorID }) | -->
+    @Html.ActionLink("Назад", "Index")
+</p>
+

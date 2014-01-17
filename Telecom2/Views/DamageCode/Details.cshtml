@@ -1,0 +1,25 @@
+﻿@model Telecom2.Models.DamageCode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DamageCode</legend>
+
+    <div class="display-label">CDamage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CDamage)
+    </div>
+
+    <div class="display-label">FCDamage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FCDamage)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DamageCodeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
